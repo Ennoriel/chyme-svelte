@@ -1,4 +1,5 @@
 export { default as Button } from './components/atom/Button.svelte';
+export { default as FormAction } from './components/atom/FormAction.svelte';
 export { default as Link } from './components/atom/Link.svelte';
 export { default as Spinner } from './components/atom/Spinner.svelte';
 
