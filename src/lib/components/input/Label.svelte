@@ -25,7 +25,7 @@
 		--border-radius: 21px;
 		--text-align: center;
 		--font-weight: 100;
-		--input-color: var(--main-color);
+		--input-color: var(--primary-color);
 	}
 
 	label {

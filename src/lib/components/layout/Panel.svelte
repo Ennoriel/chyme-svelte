@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 
+	/**
+	 * !! If triggered by a button, use 'stopPropagation' event modifier
+	 */
+
 	export let open = false;
 	export let right: boolean | undefined = undefined;
 	

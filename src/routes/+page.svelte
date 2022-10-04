@@ -30,6 +30,7 @@
 	<label>
 		toggle panels
 		<input type="checkbox" bind:checked={open}/>
+		<button on:click|stopPropagation={() => (open = true)} hidden={open} >Toggle panels</button>
 	</label>
 
 	<h2>Buttons</h2>
@@ -43,7 +44,7 @@
 	</div>
 
 	<h2>Spinner</h2>
-	<div class="container" style:color="var(--main-color)">
+	<div class="container" style:color="var(--primary-color)">
 		<Spinner />
 	</div>
 

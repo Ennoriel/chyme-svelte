@@ -42,6 +42,9 @@
 <style>
 	span {
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
 
 	span :global(button) {
