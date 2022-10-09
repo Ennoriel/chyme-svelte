@@ -6,9 +6,10 @@
 	 */
 
 	export let open = false;
-	export let right: boolean | undefined = undefined;
-	
+	export let right = false;
+
 	let pageRef: HTMLElement;
+	let scrollY: number;
 
 	function click({ target }: MouseEvent) {
 		if (open && target && pageRef && !pageRef.contains(target as Node)) open = false;
@@ -19,16 +20,17 @@
 	}
 </script>
 
-<svelte:window on:click={click} on:keydown={keydown} />
+<svelte:window on:click={click} on:keydown={keydown} bind:scrollY />
 
 {#if open}
 	<div
 		bind:this={pageRef}
 		transition:fly|local={{ x: right ? 200 : -200, duration: 400 }}
-		style:right={right ? "0" : undefined}
-		style:box-shadow={`${right && "-"}5px 0 20px -5px #333`}
+		style:right={right ? '0' : undefined}
+		style:box-shadow={`${right ? '-' : ''}6px 0 6px -6px #333`}
+		style:top="max(0px, calc(var(--header-height, 0) - {scrollY}px))"
 	>
-		<slot/>
+		<slot />
 	</div>
 {/if}
 
@@ -38,8 +40,7 @@
 		position: fixed;
 		top: var(--header-height, 0);
 		width: 300px;
-		transition: all 0.4s;
-		box-shadow: 5px 0 20px -5px #333;
+		transition: all 0.4s, top 0;
 		overflow-y: auto;
 		overflow-x: hidden;
 		bottom: 0;

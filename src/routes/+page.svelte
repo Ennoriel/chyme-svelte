@@ -10,7 +10,7 @@
 	import PasswordInput from '$lib/components/input/PasswordInput.svelte';
 	import LeftRight from '$lib/components/layout/LeftRight.svelte';
 	import LinkIcon from '$lib/components/svg/LinkIcon.svelte';
-	
+
 	import 'chyme/css/reset.css';
 	import 'chyme/css/tokens.css';
 	import 'chyme/css/scroll.css';
@@ -29,11 +29,10 @@
 	<h2>Panels</h2>
 	<label>
 		toggle panels
-		<input type="checkbox" bind:checked={open}/>
-		<button on:click|stopPropagation={() => (open = true)} hidden={open} >Toggle panels</button>
+		<input type="checkbox" bind:checked={open} />
+		<button on:click|stopPropagation={() => (open = true)} hidden={open}>Toggle panels</button>
 	</label>
 
-	<h2>Buttons</h2>
 	<BookButton />
 
 	<h2>Links</h2>
@@ -92,5 +91,9 @@
 	}
 	.container :global(button) {
 		flex-grow: 0;
+	}
+
+	:global(body) {
+		--header-height: 60px;
 	}
 </style>

@@ -1,16 +1,18 @@
-<script>
+<script lang="ts">
 	import Button from '$lib/components/atom/Button.svelte';
+	import ButtonGroup from '$lib/components/layout/ButtonGroup.svelte';
 	import X from '$lib/components/svg/X.svelte';
 
 	let pending = false;
 
-	const variants = ['square', 'squarish', 'rounded'];
-	const sizes = ['s', 'l'];
-	const themes = ['primary', 'vibrant', 'secondary', 'transparent'];
+	const variants = ['square', 'squarish', 'rounded'] as const;
+	const sizes = ['s', 'l'] as const;
+	const themes = ['primary', 'vibrant', 'secondary', 'transparent'] as const;
 
 	$: if (pending) setTimeout(() => (pending = false), 2000);
 </script>
 
+<h2>Buttons</h2>
 <table>
 	<thead>
 		<tr>
@@ -37,9 +39,9 @@
 								{variant}
 								{size}
 								{pending}
-								on:click={() => {
-									pending = true;
-								}}
+								as="a"
+								href="https://machyme.fr"
+								target="_blank"
 							>
 								Click me
 							</Button>
@@ -61,6 +63,19 @@
 	</tbody>
 </table>
 
+<h2>Button Group</h2>
+<ButtonGroup display="inline-flex">
+	<Button icon={X} as="a" />
+	<Button as="a" href="https://machyme.fr" target="_blank">Click me</Button>
+	<Button
+		icon={X}
+		{pending}
+		on:click={() => {
+			pending = true;
+		}}
+	/>
+</ButtonGroup>
+
 <style>
 	table {
 		width: 100%;
@@ -77,9 +92,5 @@
 		text-align: center;
 		height: 50px;
 		min-width: 25px;
-	}
-	td :global(button) {
-		margin: auto;
-		vertical-align: middle;
 	}
 </style>

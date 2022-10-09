@@ -2,7 +2,7 @@
 	import Icon from './Icon.svelte';
 </script>
 
-<Icon name="pin">
+<Icon>
 	<path d="m9.88 9.88a3 3 0 1 0 4.24 4.24" />
 	<path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
 	<path

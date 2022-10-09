@@ -21,7 +21,7 @@
 </script>
 
 <Label {variant}>
-	<span style:--button-pos={variant === "rounded" ? "4.5px" : "0.5px"}>
+	<span style:--button-pos={variant === 'rounded' ? '4.5px' : '0.5px'}>
 		{label}
 		{#if showPassword}
 			<input type="text" {name} bind:value={password} bind:this={input} />

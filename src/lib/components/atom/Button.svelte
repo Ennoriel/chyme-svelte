@@ -2,6 +2,7 @@
 	import type { SvelteComponent } from 'svelte';
 	import Spinner from './Spinner.svelte';
 
+	export let as: 'a' | 'button' = 'button';
 	export let size: 's' | 'l' = 'l';
 	export let variant: 'square' | 'squarish' | 'rounded' = 'rounded';
 	export let theme: 'primary' | 'secondary' | 'vibrant' | 'transparent' = 'primary';
@@ -11,11 +12,12 @@
 	export let icon: typeof SvelteComponent | undefined = undefined;
 </script>
 
-<button
+<svelte:element
+	this={as}
 	{type}
 	on:click
-	disabled={disabled || pending}
-	class="{variant} {theme} {size}"
+	disabled={as === 'button' ? disabled || pending : undefined}
+	class="button {variant} {theme} {size}"
 	class:icon
 	class:pending
 	{...$$restProps}
@@ -28,7 +30,7 @@
 		{/if}
 		<slot />
 	{/if}
-</button>
+</svelte:element>
 
 <style>
 	.s {
@@ -73,13 +75,13 @@
 
 	.primary:hover,
 	.vibrant:hover {
-		--bg: #eeeeee;
+		--bg: var(--bg-color);
 		--color: var(--text-color);
 	}
 
 	.secondary {
-		--bg: #eeeeee;
-		--color: #4f4f4f;
+		--bg: var(--bg-color);
+		--color: var(--text-color);
 	}
 
 	.transparent {
@@ -100,13 +102,13 @@
 
 	[disabled],
 	[disabled]:hover {
-		--bg: #eeeeee;
-		--color: #4f4f4f;
-		--border: 1px solid #eeeeee;
+		--bg: var(--secondary-color);
+		--color: var(--text-color);
+		--border: 1px solid var(--secondary-color);
 		--cursor: default;
 	}
 
-	button {
+	.button {
 		display: inline-flex;
 		flex-grow: 1;
 		flex-shrink: 0;
@@ -115,13 +117,15 @@
 		height: var(--height);
 		border-radius: var(--border-radius);
 		padding: var(--padding);
-		/*margin: var(--margin);*/
 		align-items: center;
 		cursor: var(--cursor, pointer);
 		color: var(--color, var(--text-color));
 		background-color: var(--bg, var(--primary-color));
 		border: var(--border, none);
 		transition: color 0.2s, background-color 0.2s;
+		vertical-align: middle;
+		margin-bottom: 3px;
+		text-decoration: none;
 	}
 
 	:focus-visible {

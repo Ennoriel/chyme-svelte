@@ -3,11 +3,7 @@
 </script>
 
 <!-- svelte-ignore a11y-label-has-associated-control -->
-<label
-	class:square={variant === 'square'}
-	class:rounded={variant === 'rounded'}
-	{...$$restProps}
->
+<label class:square={variant === 'square'} class:rounded={variant === 'rounded'} {...$$restProps}>
 	<slot />
 </label>
 

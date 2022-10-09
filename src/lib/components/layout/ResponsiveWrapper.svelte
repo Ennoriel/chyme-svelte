@@ -11,7 +11,7 @@
 	.l {
 		display: none;
 	}
-	@media (min-width: 721px) {
+	@media (min-width: 768px) {
 		.s {
 			display: none;
 		}
