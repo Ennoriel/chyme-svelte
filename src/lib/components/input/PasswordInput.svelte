@@ -47,9 +47,10 @@
 		gap: 10px;
 	}
 
-	span :global(button) {
+	span :global(.button) {
 		position: absolute;
 		bottom: var(--button-pos);
 		right: var(--button-pos);
+		margin-bottom: 0;
 	}
 </style>

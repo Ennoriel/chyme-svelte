@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.1.2
+
+### Patch Changes
+
+- Fix password input svg eye icon position
+
 ## 1.1.1
 
 ### Patch Changes
