@@ -1,5 +1,5 @@
 <script lang="ts">
-	import BookButton from './_bookButtons.svelte';
+	import BookButtons from './buttons.svelte';
 
 	import Link from '$lib/components/atom/Link.svelte';
 	import Spinner from '$lib/components/atom/Spinner.svelte';
@@ -33,7 +33,7 @@
 		<button on:click|stopPropagation={() => (open = true)} hidden={open}>Toggle panels</button>
 	</label>
 
-	<BookButton />
+	<BookButtons />
 
 	<h2>Links</h2>
 	<div class="container">
