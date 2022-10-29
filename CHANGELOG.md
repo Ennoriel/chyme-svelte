@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.2.0
+
+### Minor Changes
+
+- SEO component
+
 ## 1.1.3
 
 ### Patch Changes

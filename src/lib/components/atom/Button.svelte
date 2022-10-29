@@ -110,7 +110,6 @@
 
 	.button {
 		display: inline-flex;
-		flex-grow: 1;
 		flex-shrink: 0;
 		gap: 8px;
 		justify-content: center;

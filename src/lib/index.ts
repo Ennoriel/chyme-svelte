@@ -19,6 +19,7 @@ export { default as LeftRight } from './components/layout/LeftRight.svelte';
 export { default as Panel } from './components/layout/Panel.svelte';
 export { default as PreloadingIndicator } from './components/layout/PreloadingIndicator.svelte';
 export { default as ResponsiveWrapper } from './components/layout/ResponsiveWrapper.svelte';
+export { default as Seo } from './components/layout/Seo.svelte';
 
 export { default as Eye } from './components/svg/Eye.svelte';
 export { default as EyeOff } from './components/svg/EyeOff.svelte';
