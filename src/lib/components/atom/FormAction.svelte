@@ -8,3 +8,9 @@
 		<slot />
 	</button>
 </form>
+
+<style>
+	form {
+		display: inline;
+	}
+</style>

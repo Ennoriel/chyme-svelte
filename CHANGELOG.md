@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.1.3
+
+### Patch Changes
+
+- set FormAction inline
+
 ## 1.1.2
 
 ### Patch Changes
