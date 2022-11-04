@@ -8,5 +8,6 @@
 
 <form method="post" {action} enctype="multipart/form-data">
 	<FileInput {csrf} {name} />
+	<slot />
 	<input type="submit" />
 </form>

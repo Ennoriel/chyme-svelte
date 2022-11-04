@@ -1,10 +1,16 @@
 <script lang="ts">
 	export let direction: 'horizontal' | 'vertical' = 'horizontal';
 	export let display: 'flex' | 'inline-flex' = 'inline-flex';
-	export let justify: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' = 'flex-start';
+	export let justify:
+		| 'flex-start'
+		| 'flex-end'
+		| 'center'
+		| 'space-between'
+		| 'space-around'
+		| 'space-evenly' = 'flex-start';
 </script>
 
-<div class="button-group {direction}" style:display={display} style:justify-content={justify}>
+<div class="button-group {direction}" style:display style:justify-content={justify}>
 	<slot />
 </div>
 

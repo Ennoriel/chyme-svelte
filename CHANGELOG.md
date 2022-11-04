@@ -1,5 +1,12 @@
 # chyme-svelte
 
+## 1.2.1
+
+### Patch Changes
+
+- Add slot to FileForm
+- Fix unresizable textarea
+
 ## 1.2.0
 
 ### Minor Changes

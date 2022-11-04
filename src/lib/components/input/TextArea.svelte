@@ -17,7 +17,7 @@
 <style>
 	textarea {
 		resize: vertical;
-		height: 128px !important;
+		height: 128px;
 		line-height: 18px;
 		font-weight: 400;
 		padding-top: 8px !important;
