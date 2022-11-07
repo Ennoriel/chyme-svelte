@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.2.2
+
+### Patch Changes
+
+- Add support for link alternate seo tag (multilingual)
+
 ## 1.2.1
 
 ### Patch Changes
