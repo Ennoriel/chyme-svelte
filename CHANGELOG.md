@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.2.3
+
+### Patch Changes
+
+- Add languages Icon
+
 ## 1.2.2
 
 ### Patch Changes

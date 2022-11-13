@@ -27,6 +27,7 @@ export { default as GenderAll } from './components/svg/GenderAll.svelte';
 export { default as GenderFemale } from './components/svg/GenderFemale.svelte';
 export { default as GenderMale } from './components/svg/GenderMale.svelte';
 export { default as Icon } from './components/svg/Icon.svelte';
+export { default as Languages } from './components/svg/Languages.svelte';
 export { default as LinkIcon } from './components/svg/LinkIcon.svelte';
 export { default as MenuSvg } from './components/svg/MenuSvg.svelte';
 export { default as Pin } from './components/svg/Pin.svelte';
