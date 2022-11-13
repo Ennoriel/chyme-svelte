@@ -11,6 +11,8 @@
 	import LeftRight from '$lib/components/layout/LeftRight.svelte';
 	import LinkIcon from '$lib/components/svg/LinkIcon.svelte';
 
+	import * as Svgs from '$lib/components/svg';
+
 	import 'chyme/css/reset.css';
 	import 'chyme/css/tokens.css';
 	import 'chyme/css/scroll.css';
@@ -76,6 +78,12 @@
 
 <Panel bind:open>yolo</Panel>
 <Panel bind:open right>yolo</Panel>
+
+<ul>
+	{#each Object.entries(Svgs).filter(([k]) => k !== 'Icon') as [name, Svg]}
+		<li><svelte:component this={Svg} width={18} height={18} /> {name}</li>
+	{/each}
+</ul>
 
 <style>
 	#wrapper {
