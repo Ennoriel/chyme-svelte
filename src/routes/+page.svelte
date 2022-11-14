@@ -23,6 +23,20 @@
 	import Panel from '$lib/components/layout/Panel.svelte';
 
 	let open = false;
+
+	type Name = { name: string };
+
+	const optionsStr = ['option 1', 'option 2', 'option 3'];
+	const optionsNbr = [1, 2, 3];
+
+	let str: string | undefined;
+	let nbr: number | undefined;
+	let obj: Name | undefined;
+
+	const options = [
+		{ label: 'Max', value: { name: 'Max' } },
+		{ label: 'Eti', value: { name: 'Eti' } }
+	];
 </script>
 
 <div id="wrapper">
@@ -72,7 +86,22 @@
 		<FileInput slot="right" csrf="textarea" />
 	</LeftRight>
 
-	<Radio label="radio input" name="radio" options={['option 1', 'option 2', 'option 3']} />
+	<Radio label="radio input" name="radio" options={optionsStr} bind:value={str} />
+	<Radio label="radio input" name="radio" options={optionsNbr} bind:value={nbr} />
+	<Radio
+		label="radio input"
+		name="radio"
+		options={[{ label: 'option 1', value: 'option_1' }]}
+		bind:value={str}
+	/>
+	<Radio
+		label="radio input"
+		name="radio"
+		options={[{ label: 'option 1', value: 1 }]}
+		bind:value={nbr}
+	/>
+	<Radio label="radio input" name="radio" {options} bind:value={obj} />
+
 	<Checkbox label="checkbox input" name="checkbox" options={['option 1', 'option 2', 'option 3']} />
 </div>
 

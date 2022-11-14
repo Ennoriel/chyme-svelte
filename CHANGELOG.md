@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- Fix radio & checkbox types with generics
+
+## 1.2.4
+
+### Patch Changes
+
 - Add viewport props to Icon component in order to being able to resize any Svg
 
 ## 1.2.3

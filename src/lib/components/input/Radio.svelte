@@ -1,20 +1,19 @@
 <script lang="ts">
-	import type { SelectableOption, SelectableValue } from '$lib/types/input.type';
+	import type { InnerOption, SelectableValue, ValueOfOption } from './input.type';
+	import { rewriteOption } from './utils';
+
+	type T = $$Generic<SelectableValue>;
 
 	export let label: string;
 	export let name: string;
 	export let required = false;
-	export let value: any = undefined;
-	export let options: Array<SelectableValue> = [];
+	export let value: ValueOfOption<T> | undefined = undefined;
+	export let options: Array<T> = [];
 	export let disabled = false;
 
-	let _options: Array<SelectableOption>;
+	let _options: Array<InnerOption<T>>;
 
-	$: _options = (
-		options.some((o) => typeof o === 'object' && 'value' in o && 'label' in o)
-			? options
-			: options.map((o) => ({ label: o, value: o }))
-	) as Array<SelectableOption>;
+	$: _options = options.map(rewriteOption);
 </script>
 
 <fieldset>

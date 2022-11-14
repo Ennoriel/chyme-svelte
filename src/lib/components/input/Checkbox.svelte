@@ -1,5 +1,8 @@
 <script lang="ts">
-	import type { SelectableOption, SelectableValue } from '$lib/types/input.type';
+	import type { InnerOption, SelectableValue, ValueOfOption } from './input.type';
+	import { rewriteOption } from './utils';
+
+	type T = $$Generic<SelectableValue>;
 
 	export let label: string;
 	export let name: string;
@@ -8,17 +11,13 @@
 	 * Required, set to false as soon as at least one option is selected
 	 */
 	export let required = false;
-	export let value = [];
-	export let options: Array<SelectableValue> = [];
+	export let value: Array<ValueOfOption<T>> = [];
+	export let options: Array<T> = [];
 
-	let _options: Array<SelectableOption>;
+	let _options: Array<InnerOption<T>>;
 
 	$: if (!value) value = [];
-	$: _options = (
-		options.some((o: SelectableValue) => typeof o === 'object' && 'value' in o && 'label' in o)
-			? options
-			: options.map((o) => ({ label: o, value: o }))
-	) as Array<SelectableOption>;
+	$: _options = options.map(rewriteOption);
 </script>
 
 <fieldset>
