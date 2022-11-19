@@ -9,7 +9,7 @@
 	export let right = false;
 
 	let pageRef: HTMLElement;
-	let scrollY: number;
+	let scrollY = 0;
 
 	function click({ target }: MouseEvent) {
 		if (open && target && pageRef && !pageRef.contains(target as Node)) open = false;

@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.2.5
+
+### Patch Changes
+
+- f60f716: Fix initial panel height
+
 ## 1.2.4
 
 ### Patch Changes
