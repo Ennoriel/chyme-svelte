@@ -21,23 +21,25 @@
 	import TextArea from '$lib/components/input/TextArea.svelte';
 	import FileInput from '$lib/components/input/FileInput.svelte';
 	import Panel from '$lib/components/layout/Panel.svelte';
+	import HasBeenTabbed from '$lib/components/atom/HasBeenTabbed.svelte';
 
 	let open = false;
 
 	type Name = { name: string };
 
-	const optionsStr = ['option 1', 'option 2', 'option 3'];
-	const optionsNbr = [1, 2, 3];
-
 	let str: string | undefined;
 	let nbr: number | undefined;
 	let obj: Name | undefined;
 
-	const options = [
+	const optionsStr = ['option 1', 'option 2', 'option 3'];
+	const optionsNbr = [1, 2, 3];
+	const optionsObj = [
 		{ label: 'Max', value: { name: 'Max' } },
 		{ label: 'Eti', value: { name: 'Eti' } }
 	];
 </script>
+
+<HasBeenTabbed />
 
 <div id="wrapper">
 	<h1>Storybook</h1>
@@ -88,19 +90,7 @@
 
 	<Radio label="radio input" name="radio" options={optionsStr} bind:value={str} />
 	<Radio label="radio input" name="radio" options={optionsNbr} bind:value={nbr} />
-	<Radio
-		label="radio input"
-		name="radio"
-		options={[{ label: 'option 1', value: 'option_1' }]}
-		bind:value={str}
-	/>
-	<Radio
-		label="radio input"
-		name="radio"
-		options={[{ label: 'option 1', value: 1 }]}
-		bind:value={nbr}
-	/>
-	<Radio label="radio input" name="radio" {options} bind:value={obj} />
+	<Radio label="radio input" name="radio" options={optionsObj} bind:value={obj} />
 
 	<Checkbox label="checkbox input" name="checkbox" options={['option 1', 'option 2', 'option 3']} />
 </div>

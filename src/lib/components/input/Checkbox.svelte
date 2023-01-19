@@ -61,7 +61,7 @@
 		margin: 0 5px 5px 0;
 		font-size: 14px;
 		cursor: pointer;
-		transition: color 0.2s, background-color 0.2s;
+		transition: color 0.2s, background-color 0.2s, filter 0.2s;
 		outline: none;
 		user-select: none;
 	}
@@ -71,7 +71,9 @@
 	label.selected {
 		background-color: var(--primary-color);
 		color: white;
-		cursor: default;
+	}
+	label:hover {
+		filter: brightness(90%);
 	}
 	:global(.has-been-tabbed) label:focus-within {
 		outline: 2px solid var(--focus-color);

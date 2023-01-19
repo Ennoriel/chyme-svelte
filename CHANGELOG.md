@@ -1,5 +1,16 @@
 # chyme-svelte
 
+## 1.3.0
+
+### Minor Changes
+
+- Use SvelteKit 1.0.0
+
+### Patch Changes
+
+- Add HasBeenTabbed component
+- Fix radio & checkbox hover style
+
 ## 1.2.5
 
 ### Patch Changes
