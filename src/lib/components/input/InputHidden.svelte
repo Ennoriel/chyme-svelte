@@ -2,7 +2,7 @@
 	import { fdtoFromObject } from 'chyme';
 
 	export let name: string;
-	export let value: Record<string, unknown> | string | number | boolean;
+	export let value: any;
 
 	$: _value = Object.entries(fdtoFromObject(name === '$' ? value || {} : { [name]: value }) || {});
 </script>
