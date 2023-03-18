@@ -13,11 +13,6 @@
 
 	import * as Svgs from '$lib/components/svg';
 
-	import 'chyme/css/reset.css';
-	import 'chyme/css/tokens.css';
-	import 'chyme/css/scroll.css';
-	import 'chyme/css/a11y.css';
-	import 'chyme/css/code.css';
 	import TextArea from '$lib/components/input/TextArea.svelte';
 	import FileInput from '$lib/components/input/FileInput.svelte';
 	import Panel from '$lib/components/layout/Panel.svelte';
@@ -43,6 +38,9 @@
 
 <div id="wrapper">
 	<h1>Storybook</h1>
+
+	<h2>Landing page</h2>
+	<a href="/landing-page">Link to landing page</a>
 
 	<h2>Panels</h2>
 	<label>
