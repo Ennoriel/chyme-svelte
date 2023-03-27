@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.4.1
+
+### Patch Changes
+
+- Fix the landing page components"
+
 ## 1.4.0
 
 ### Minor Changes

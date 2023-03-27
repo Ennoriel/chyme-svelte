@@ -8,19 +8,24 @@
 	export let header: 'h1' | 'h2' | 'h3' = 'h2';
 	export let buttons: Array<{ label: string }> | undefined = undefined;
 	export let img: typeof SvelteComponent | undefined = undefined;
+	export let src: string | undefined = undefined;
 	export let theme: 'primary' | 'transparent' = 'primary';
 	export let reverse = false;
 	export let tight = false;
 	export let center = false;
 </script>
 
-<Wrapper {theme} {tight} col={img ? 2 : undefined}>
+<Wrapper {theme} {tight} col={img || src ? 2 : undefined}>
 	{#if img}
 		<div class:right={reverse} class:left={!reverse}>
 			<svelte:component this={img} maxwidth={250} maxheight={250} />
 		</div>
+	{:else if src}
+		<div class:right={reverse} class:left={!reverse}>
+			<img {src} alt="" width="250" height="250"/>
+		</div>
 	{/if}
-	<div class="content" class:left={img && reverse} class:right={img && !reverse} class:center>
+	<div class="content" class:left={(img || src) && reverse} class:right={(img || src) && !reverse} class:center>
 		<svelte:element this={header} style:margin={title && !$$slots && !img ? '0' : undefined}
 			>{title}</svelte:element
 		>
