@@ -21,9 +21,10 @@
 </script>
 
 <svelte:head>
+		<title>{title}</title>
+		
 	{#if robots}
 		<!-- Primary Meta Tags -->
-		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={description} />
 

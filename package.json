@@ -1,6 +1,6 @@
 {
 	"name": "chyme-svelte",
-	"version": "1.4.2",
+	"version": "1.4.3",
 	"scripts": {
 		"dev": "vite dev --host --open",
 		"build": "svelte-kit sync && svelte-package",

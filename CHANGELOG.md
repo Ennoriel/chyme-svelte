@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.4.3
+
+### Patch Changes
+
+- Add title when no robots is allowed"
+
 ## 1.4.2
 
 ### Patch Changes
