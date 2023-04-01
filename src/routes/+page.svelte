@@ -86,9 +86,9 @@
 		<FileInput slot="right" csrf="textarea" />
 	</LeftRight>
 
-	<Radio label="radio input" name="radio" options={optionsStr} bind:value={str} />
-	<Radio label="radio input" name="radio" options={optionsNbr} bind:value={nbr} />
-	<Radio label="radio input" name="radio" options={optionsObj} bind:value={obj} />
+	<Radio label="radio input" name="radio-1" options={optionsStr} bind:value={str} />
+	<Radio label="radio input" name="radio-2" options={optionsNbr} bind:value={nbr} />
+	<Radio label="radio input" name="radio-3" options={optionsObj} bind:value={obj} />
 
 	<Checkbox label="checkbox input" name="checkbox" options={['option 1', 'option 2', 'option 3']} />
 </div>

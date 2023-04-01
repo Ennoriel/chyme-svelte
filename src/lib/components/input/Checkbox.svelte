@@ -75,7 +75,7 @@
 	label:hover {
 		filter: brightness(90%);
 	}
-	:global(.has-been-tabbed) label:focus-within {
+	:global(.keyboard-user) label:focus-within {
 		outline: 2px solid var(--focus-color);
 		outline-offset: 2px;
 	}

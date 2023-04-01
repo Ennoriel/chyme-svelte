@@ -45,10 +45,16 @@
 		padding: 0 16px;
 		margin: 0;
 		background-color: white;
+		transition: box-shadow 0.2s;
 	}
 
-	label :focus-visible,
-	label :focus-visible {
-		outline: 1px solid var(--focus-color);
+	:global(.keyboard-user) label :global(:focus) {
+		outline: 2px solid var(--keyboard-focus-color, red);
+		outline-offset: 2px;
+	}
+
+	:global(.mouse-user) label :global(:focus) {
+		outline: none;
+		box-shadow: 0 0 4px var(--mouse-focus-color, #777);
 	}
 </style>
