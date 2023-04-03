@@ -1,9 +1,10 @@
 <script lang="ts">
 	export let variant: 'square' | 'rounded' = 'rounded';
+	export let align: 'left' | 'center' = 'left';
 </script>
 
 <!-- svelte-ignore a11y-label-has-associated-control -->
-<label class:square={variant === 'square'} class:rounded={variant === 'rounded'} {...$$restProps}>
+<label class="{variant} {align}" {...$$restProps}>
 	<slot />
 </label>
 
@@ -19,9 +20,12 @@
 	label.rounded {
 		--height: 41px;
 		--border-radius: 21px;
-		--text-align: center;
 		--font-weight: 100;
-		--input-color: var(--primary-color);
+		--input-color: var(--text-color);
+	}
+
+	label.center {
+		--text-align: center;
 	}
 
 	label {

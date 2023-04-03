@@ -7,9 +7,10 @@
 	export let placeholder: string | undefined = undefined;
 	export let value = '';
 	export let variant: 'square' | 'rounded' = 'rounded';
+	export let align: 'left' | 'center' = 'left';
 </script>
 
-<Label {variant}>
+<Label {variant} {align}>
 	{label}
 	<input type="text" {name} {required} bind:value {placeholder} />
 </Label>

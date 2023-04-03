@@ -17,6 +17,8 @@
 	import FileInput from '$lib/components/input/FileInput.svelte';
 	import Panel from '$lib/components/layout/Panel.svelte';
 	import HasBeenTabbed from '$lib/components/atom/HasBeenTabbed.svelte';
+	import Select from '$lib/components/input/Select.svelte';
+	import { range } from 'chyme';
 
 	let open = false;
 
@@ -32,12 +34,69 @@
 		{ label: 'Max', value: { name: 'Max' } },
 		{ label: 'Eti', value: { name: 'Eti' } }
 	];
+
+	let r: { name: string };
+
+	let f = (i: { label: string; value: string }) => i.label;
+
+	function makeOption(str: string): { label: string; value: string } {
+		console.log('!!', str);
+		return {
+			label: str,
+			value: str
+		};
+	}
+
+	function makeOptions(arr: Array<string>): Array<{ label: string; value: string }> {
+		console.log('!!', arr);
+		return arr.map(makeOption);
+	}
 </script>
 
 <HasBeenTabbed />
 
 <div id="wrapper">
 	<h1>Storybook</h1>
+
+	<form>
+		<Select
+			getLabel={(item) => '! - ' + item.label}
+			loadOptions={() =>
+				Promise.resolve(
+					[
+						{
+							name: 'Rabastens',
+							coordinates: [43.85, 1.71],
+							zipCodes: ['81800'],
+							inseeCode: '81220'
+						},
+						{
+							name: 'Rabastens de Bigorre',
+							coordinates: [43.39, 0.16],
+							zipCodes: ['65140'],
+							inseeCode: '65375'
+						}
+					].map(({ name, zipCodes, inseeCode }) => ({
+						label: `${name} (${zipCodes.join(', ')})`,
+						value: inseeCode
+					}))
+				)}
+		/>
+		<Select getLabel={(item) => '! - ' + item.label} items={makeOptions(optionsStr)} />
+		<Select getLabel={(item) => '! - ' + item.label} items={optionsObj} />
+		<Select
+			getLabel={(item) => '! - ' + item.label}
+			items={makeOptions(optionsStr)}
+			value={makeOption(optionsStr[1])}
+		/>
+		<Select
+			getLabel={(item) => '! - ' + item.value.name}
+			items={optionsObj}
+			value={optionsObj[1]}
+			justValue={r}
+		/>
+		<button type="submit">submit</button>
+	</form>
 
 	<h2>Landing page</h2>
 	<a href="/landing-page">Link to landing page</a>
@@ -65,6 +124,14 @@
 
 	<h2>Input</h2>
 
+	<LeftRight>
+		<Select slot="left" label="select" items={optionsObj} variant="square" />
+		<Select
+			slot="right"
+			label="select"
+			items={range(1, 100).map((i) => ({ label: i.toFixed(), value: i.toFixed() }))}
+		/>
+	</LeftRight>
 	<LeftRight>
 		<TextInput slot="left" label="text input" name="text" variant="square" />
 		<TextInput slot="right" label="text input" name="text" />
