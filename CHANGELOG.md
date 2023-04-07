@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.1
+
+### Patch Changes
+
+- Move svelte-select to dependencies
+
 ## 1.5.0
 
 ### Minor Changes

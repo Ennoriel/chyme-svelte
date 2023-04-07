@@ -1,5 +1,10 @@
 lockfileVersion: '6.0'
 
+dependencies:
+  svelte-select:
+    specifier: ^5.5.3
+    version: 5.5.3
+
 devDependencies:
   '@changesets/cli':
     specifier: ^2.26.1
@@ -49,9 +54,6 @@ devDependencies:
   svelte-preprocess:
     specifier: ^5.0.3
     version: 5.0.3(svelte@3.58.0)(typescript@5.0.3)
-  svelte-select:
-    specifier: ^5.5.3
-    version: 5.5.3
   tslib:
     specifier: ^2.5.0
     version: 2.5.0
@@ -513,13 +515,13 @@ packages:
 
   /@floating-ui/core@1.2.6:
     resolution: {integrity: sha512-EvYTiXet5XqweYGClEmpu3BoxmsQ4hkj3QaYA6qEnigCWffTP3vNRwBReTdrwDwo7OoJ3wM8Uoe9Uk4n+d4hfg==}
-    dev: true
+    dev: false
 
   /@floating-ui/dom@1.2.6:
     resolution: {integrity: sha512-02vxFDuvuVPs22iJICacezYJyf7zwwOCWkPNkWNBr1U0Qt1cKFYzWvxts0AmqcOQGwt/3KJWcWIgtbUU38keyw==}
     dependencies:
       '@floating-ui/core': 1.2.6
-    dev: true
+    dev: false
 
   /@humanwhocodes/config-array@0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
@@ -2904,7 +2906,7 @@ packages:
     dependencies:
       '@floating-ui/core': 1.2.6
       '@floating-ui/dom': 1.2.6
-    dev: true
+    dev: false
 
   /svelte-hmr@0.15.1(svelte@3.58.0):
     resolution: {integrity: sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==}
@@ -2967,7 +2969,7 @@ packages:
     dependencies:
       '@floating-ui/dom': 1.2.6
       svelte-floating-ui: 1.2.8
-    dev: true
+    dev: false
 
   /svelte2tsx@0.6.11(svelte@3.58.0)(typescript@5.0.3):
     resolution: {integrity: sha512-rRW/3V/6mcejYWmSqcHpmILOSPsOhLgkbKbrTOz82s2n8TywmIsqj2jYPsiL6HeGoUM/atiTD0YKguW4b7ECog==}
