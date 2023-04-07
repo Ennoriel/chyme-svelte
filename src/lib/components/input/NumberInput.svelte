@@ -7,24 +7,12 @@
 	export let placeholder: string | undefined = undefined;
 	export let value = '';
 	export let variant: 'square' | 'rounded' = 'rounded';
+	export let align: 'left' | 'center' = 'left';
+	export let min: string | number | undefined = undefined;
+	export let max: string | number | undefined = undefined;
 </script>
 
-<Label {variant}>
+<Label {variant} {align}>
 	{label}
-	<textarea {name} {required} bind:value {placeholder} />
+	<input type="number" {name} {required} {min} {max} bind:value {placeholder} />
 </Label>
-
-<style>
-	textarea {
-		resize: vertical;
-		height: 128px;
-		line-height: 18px;
-		font-weight: 400;
-		padding-top: 8px !important;
-		cursor: text;
-	}
-
-	textarea::-webkit-resizer {
-		display: none;
-	}
-</style>

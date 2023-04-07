@@ -16,7 +16,7 @@
 	export let label = '';
 	export let listOpen = false;
 	export let listPlacement: 'top' | 'bottom' = 'bottom';
-	export let loadOptions: (filterText: string) => Promise<Array<Option>>;
+	export let loadOptions: ((filterText: string) => Promise<Array<Option>>) | undefined = undefined;
 	export let name: string;
 	export let placeholder = '';
 	export let required = false;

@@ -20,6 +20,7 @@
 	import Select from '$lib/components/input/Select.svelte';
 	import { range } from 'chyme';
 	import { makeOption, makeOptions } from '$lib/components/input/utils';
+	import NumberInput from '$lib/components/input/NumberInput.svelte';
 
 	let open = false;
 
@@ -111,9 +112,10 @@
 	<h2>Input</h2>
 
 	<LeftRight>
-		<Select slot="left" label="select" items={optionsObj} variant="square" />
+		<Select slot="left" name="select-1" label="select" items={optionsObj} variant="square" />
 		<Select
 			slot="right"
+			name="select-2"
 			label="select"
 			items={range(1, 100).map((i) => ({ label: i.toFixed(), value: i.toFixed() }))}
 		/>
@@ -121,6 +123,10 @@
 	<LeftRight>
 		<TextInput slot="left" label="text input" name="text" variant="square" />
 		<TextInput slot="right" label="text input" name="text" />
+	</LeftRight>
+	<LeftRight>
+		<NumberInput slot="left" label="number input" name="number" variant="square" />
+		<NumberInput slot="right" label="number input" name="number" min="10" max="30" />
 	</LeftRight>
 	<LeftRight>
 		<EmailInput slot="left" variant="square" />

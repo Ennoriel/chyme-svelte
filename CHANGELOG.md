@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.2
+
+### Patch Changes
+
+- Add number input & remove textarea resizer
+
 ## 1.5.1
 
 ### Patch Changes
