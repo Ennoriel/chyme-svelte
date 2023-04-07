@@ -9,3 +9,4 @@ export { default as Radio } from './Radio.svelte';
 export { default as Select } from './Select.svelte';
 export { default as TextArea } from './TextArea.svelte';
 export { default as TextInput } from './TextInput.svelte';
+export * from './utils';

@@ -1,11 +1,13 @@
 <script lang="ts">
 	import Select from 'svelte-select';
 	import Label from './Label.svelte';
+	import { createEventDispatcher } from 'svelte';
 
 	type Label = $$Generic;
 	type Value = $$Generic;
 	type Option = { label: Label | string; value: Value | string; created?: boolean };
 
+	export let align: 'left' | 'center' = 'left';
 	export let filterText = '';
 	export let getLabel: (item: Option) => string = (item) =>
 		typeof item.label === 'string' ? item.label : '';
@@ -21,20 +23,26 @@
 	export let searchable = true;
 	export let value: Option | undefined = undefined;
 	export let variant: 'square' | 'rounded' = 'rounded';
+	export const setValue = (option: any) => {
+		console.log('setValue');
+		value = option;
+	};
+
+	const dispatch = createEventDispatcher();
 
 	$: floatingConfig = {
 		placement: listPlacement === 'top' ? 'top-start' : 'bottom-start'
 	};
 
 	function handleFilter(e: CustomEvent) {
-		console.log(e, e.detail);
 		if (e.detail.length === 0 && filterText.length > 0 && items) {
 			const prev = items.filter((i) => !i.created);
 			items = [...prev, { value: filterText, label: filterText, created: true }];
 		}
 	}
 
-	function handleChange() {
+	function handleChange(e: any) {
+		dispatch('change', e.details);
 		if (items) {
 			items = items.map((i) => {
 				delete i.created;
@@ -44,7 +52,7 @@
 	}
 </script>
 
-<Label {variant}>
+<Label {variant} {align}>
 	{label}
 	<Select
 		class={searchable ? 'searchable' : ''}
@@ -61,7 +69,7 @@
 		bind:justValue
 		bind:value
 		on:blur
-		on:change={handleChange}
+		on:input={handleChange}
 		on:filter={handleFilter}
 		on:focus
 	>

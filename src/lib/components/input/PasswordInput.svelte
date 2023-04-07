@@ -6,6 +6,7 @@
 	export let label = 'Password';
 	export let name = 'password';
 	export let variant: 'square' | 'rounded' = 'rounded';
+	export let align: 'left' | 'center' = 'left';
 
 	let password: string;
 	let showPassword = false;
@@ -20,7 +21,7 @@
 	}
 </script>
 
-<Label {variant}>
+<Label {variant} {align}>
 	<span style:--button-pos={variant === 'rounded' ? '4.5px' : '0.5px'}>
 		{label}
 		{#if showPassword}

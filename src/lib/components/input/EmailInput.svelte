@@ -5,9 +5,10 @@
 	export let name = 'email';
 	export let value = '';
 	export let variant: 'square' | 'rounded' = 'rounded';
+	export let align: 'left' | 'center' = 'left';
 </script>
 
-<Label {variant}>
+<Label {variant} {align}>
 	{label}
 	<input type="email" {name} bind:value />
 </Label>

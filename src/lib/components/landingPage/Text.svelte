@@ -22,10 +22,15 @@
 		</div>
 	{:else if src}
 		<div class:right={reverse} class:left={!reverse}>
-			<img {src} alt="" width="250" height="250"/>
+			<img {src} alt="" width="250" height="250" />
 		</div>
 	{/if}
-	<div class="content" class:left={(img || src) && reverse} class:right={(img || src) && !reverse} class:center>
+	<div
+		class="content"
+		class:left={(img || src) && reverse}
+		class:right={(img || src) && !reverse}
+		class:center
+	>
 		<svelte:element this={header} style:margin={title && !$$slots && !img ? '0' : undefined}
 			>{title}</svelte:element
 		>

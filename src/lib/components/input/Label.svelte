@@ -20,7 +20,7 @@
 	label.rounded {
 		--height: 41px;
 		--border-radius: 21px;
-		--font-weight: 100;
+		--font-weight: 400;
 		--input-color: var(--text-color);
 	}
 
@@ -50,6 +50,11 @@
 		margin: 0;
 		background-color: white;
 		transition: box-shadow 0.2s;
+	}
+
+	label :global(input[type='radio']),
+	label :global(input[type='checkbox']) {
+		box-shadow: none;
 	}
 
 	:global(.keyboard-user) label :global(:focus) {

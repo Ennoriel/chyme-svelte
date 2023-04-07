@@ -12,7 +12,9 @@
 	let scrollY = 0;
 
 	function click({ target }: MouseEvent) {
-		if (open && target && pageRef && !pageRef.contains(target as Node)) open = false;
+		if (open && target && pageRef && !pageRef.contains(target as Node)) {
+			open = false;
+		}
 	}
 
 	function keydown(e: KeyboardEvent) {

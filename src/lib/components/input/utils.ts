@@ -7,3 +7,14 @@ export function rewriteOption<T extends SelectableValue>(option: T): InnerOption
 		return { label: option, value: option } as InnerOption<T>;
 	}
 }
+
+export function makeOption(str: string): { label: string; value: string } {
+	return {
+		label: str,
+		value: str
+	};
+}
+
+export function makeOptions(arr: Array<string>): Array<{ label: string; value: string }> {
+	return arr.map(makeOption);
+}

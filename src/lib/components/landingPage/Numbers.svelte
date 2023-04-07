@@ -18,7 +18,7 @@
 			{#if item.compo}
 				<svelte:component this={item.compo} maxheight={240 / maxItemLg} />
 			{:else if item.src}
-				<img src={item.src} alt="" width={240 / maxItemLg} height={240 / maxItemLg}/>
+				<img src={item.src} alt="" width={240 / maxItemLg} height={240 / maxItemLg} />
 			{/if}
 			<strong>{item.number}</strong>
 			<span>{@html item.description}</span>

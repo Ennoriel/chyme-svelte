@@ -19,6 +19,7 @@
 	import HasBeenTabbed from '$lib/components/atom/HasBeenTabbed.svelte';
 	import Select from '$lib/components/input/Select.svelte';
 	import { range } from 'chyme';
+	import { makeOption, makeOptions } from '$lib/components/input/utils';
 
 	let open = false;
 
@@ -36,21 +37,6 @@
 	];
 
 	let r: { name: string };
-
-	let f = (i: { label: string; value: string }) => i.label;
-
-	function makeOption(str: string): { label: string; value: string } {
-		console.log('!!', str);
-		return {
-			label: str,
-			value: str
-		};
-	}
-
-	function makeOptions(arr: Array<string>): Array<{ label: string; value: string }> {
-		console.log('!!', arr);
-		return arr.map(makeOption);
-	}
 </script>
 
 <HasBeenTabbed />

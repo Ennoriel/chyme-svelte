@@ -21,8 +21,8 @@
 </script>
 
 <svelte:head>
-		<title>{title}</title>
-		
+	<title>{title}</title>
+
 	{#if robots}
 		<!-- Primary Meta Tags -->
 		<meta name="title" content={title} />

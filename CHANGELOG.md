@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.0
+
+### Minor Changes
+
+- Add Select & minor design fixes
+
 ## 1.4.3
 
 ### Patch Changes
