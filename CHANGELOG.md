@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.3
+
+### Patch Changes
+
+- Fix number input value type & link style
+
 ## 1.5.2
 
 ### Patch Changes

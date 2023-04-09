@@ -5,7 +5,7 @@
 	export let name: string;
 	export let required = false;
 	export let placeholder: string | undefined = undefined;
-	export let value = '';
+	export let value: number | undefined = undefined;
 	export let variant: 'square' | 'rounded' = 'rounded';
 	export let align: 'left' | 'center' = 'left';
 	export let min: string | number | undefined = undefined;

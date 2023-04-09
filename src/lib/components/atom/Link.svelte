@@ -30,4 +30,7 @@
 	a:focus-visible {
 		color: var(--secondary-color);
 	}
+	a > :global(*) {
+		flex-shrink: 0;
+	}
 </style>
