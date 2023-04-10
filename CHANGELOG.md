@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.4
+
+### Patch Changes
+
+- Add types to package.json
+
 ## 1.5.3
 
 ### Patch Changes

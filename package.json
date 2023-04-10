@@ -1,6 +1,6 @@
 {
 	"name": "chyme-svelte",
-	"version": "1.5.3",
+	"version": "1.5.4",
 	"scripts": {
 		"dev": "vite dev --host --open",
 		"build": "svelte-kit sync && svelte-package",
@@ -47,6 +47,8 @@
 			"default": "./dist/index.js"
 		}
 	},
+	"index": "./dist/index.d.ts",
+	"types": "./dist/index.js",
 	"files": [
 		"dist",
 		"CHANGELOG.md"
