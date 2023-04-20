@@ -23,10 +23,6 @@
 	export let searchable = true;
 	export let value: Option | undefined = undefined;
 	export let variant: 'square' | 'rounded' = 'rounded';
-	export const setValue = (option: any) => {
-		console.log('setValue');
-		value = option;
-	};
 
 	const dispatch = createEventDispatcher();
 

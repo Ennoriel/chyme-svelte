@@ -5,11 +5,14 @@
 	export let as: 'a' | 'button' = 'button';
 	export let size: 's' | 'l' = 'l';
 	export let variant: 'square' | 'squarish' | 'rounded' = 'rounded';
-	export let theme: 'primary' | 'secondary' | 'vibrant' | 'transparent' = 'primary';
+	export let theme: 'primary' | 'vibrant' | 'transparent' | string = 'primary';
 	export let type = 'button';
 	export let disabled = false;
 	export let pending = false;
 	export let icon: typeof SvelteComponent | undefined = undefined;
+	export let iconRight = false;
+
+	$: _theme = ['primary', 'vibrant', 'transparent'].includes(theme) ? theme : 'custom';
 </script>
 
 <svelte:element
@@ -17,19 +20,22 @@
 	{type}
 	on:click
 	disabled={as === 'button' ? disabled || pending : undefined}
-	class="button {variant} {theme} {size}"
+	class="button {variant} {_theme} {size}"
+	style:--custom-color={_theme === 'custom' ? theme : undefined}
+	class:disabled
 	class:icon
+	class:icon-and-text={icon && $$slots.default}
 	class:pending
+	class:icon-right={iconRight}
 	{...$$restProps}
 >
-	{#if icon}
+	{#if pending}
+		<Spinner />
+	{:else if icon}
 		<svelte:component this={icon} />
-	{:else}
-		{#if pending}
-			<Spinner />
-		{/if}
-		<slot />
 	{/if}
+
+	<slot />
 </svelte:element>
 
 <style>
@@ -59,6 +65,22 @@
 		--padding: 0;
 	}
 
+	.s.icon-and-text {
+		--padding: 0 16px 0 8px;
+	}
+
+	.s.icon-and-text.icon-right {
+		--padding: 0 8px 0 16px;
+	}
+
+	.l.icon-and-text {
+		--padding: 0 24px 0 12px;
+	}
+
+	.l.icon-and-text.icon-right {
+		--padding: 0 12px 0 24px;
+	}
+
 	.squarish {
 		--border-radius: 8px;
 	}
@@ -71,6 +93,7 @@
 		--bg: var(--primary-color);
 		--color: #fff;
 		--border: 1px solid var(--primary-color);
+		--spinner-color: #fff;
 	}
 
 	.primary:hover,
@@ -79,8 +102,8 @@
 		--color: var(--text-color);
 	}
 
-	.secondary {
-		--bg: var(--bg-color);
+	.custom {
+		--bg: var(--custom-color);
 		--color: var(--text-color);
 	}
 
@@ -94,14 +117,14 @@
 		--border: 1px solid var(--secondary-color);
 	}
 
-	.secondary:hover,
+	.custom:hover,
 	.transparent:hover {
 		--bg: var(--primary-color);
 		--color: white;
 	}
 
-	[disabled],
-	[disabled]:hover {
+	.disabled,
+	.disabled:hover {
 		--bg: var(--secondary-color);
 		--color: var(--text-color);
 		--border: 1px solid var(--secondary-color);
@@ -125,6 +148,10 @@
 		vertical-align: middle;
 		margin-bottom: 3px;
 		text-decoration: none;
+	}
+
+	.icon-right {
+		flex-direction: row-reverse;
 	}
 
 	:focus-visible {

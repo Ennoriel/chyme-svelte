@@ -1,5 +1,15 @@
 # chyme-svelte
 
+## 1.5.5
+
+### Patch Changes
+
+- Transform secondary theme button to a customizable color theme
+- Fix checkbox default color
+- Add step props to NumberInput
+- Remove unused method of the Select
+- Add disable props to TextInput
+
 ## 1.5.4
 
 ### Patch Changes

@@ -55,7 +55,7 @@
 	}
 	label {
 		display: inline-block;
-		background-color: #eeeeee;
+		background-color: #f7f7fa;
 		border-radius: 5px;
 		padding: 6px 12px;
 		margin: 0 5px 5px 0;

@@ -7,7 +7,7 @@
 
 	const variants = ['square', 'squarish', 'rounded'] as const;
 	const sizes = ['s', 'l'] as const;
-	const themes = ['primary', 'vibrant', 'secondary', 'transparent'] as const;
+	const themes = ['primary', 'vibrant', '#ABCDEF', 'transparent'] as const;
 
 	$: if (pending) setTimeout(() => (pending = false), 2000);
 </script>
@@ -23,7 +23,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		{#each sizes as size}
+		{#each sizes as size, size_i}
 			{#each variants as variant, variant_i}
 				<tr>
 					{#if variant_i === 0}
@@ -32,7 +32,7 @@
 						</td>
 					{/if}
 					<td>{variant}</td>
-					{#each themes as theme}
+					{#each themes as theme, theme_i}
 						<td>
 							<Button
 								{theme}
@@ -55,6 +55,19 @@
 									pending = true;
 								}}
 							/>
+							<Button
+								{theme}
+								{variant}
+								{size}
+								icon={X}
+								iconRight={!!((size_i + variant_i + theme_i) % 2)}
+								{pending}
+								on:click={() => {
+									pending = true;
+								}}
+							>
+								Click me
+							</Button>
 						</td>
 					{/each}
 				</tr>
@@ -78,8 +91,8 @@
 
 <style>
 	table {
-		width: 100%;
-		margin: 16px 0;
+		width: calc(100% + 400px);
+		margin: 16px -200px;
 	}
 	table,
 	th,

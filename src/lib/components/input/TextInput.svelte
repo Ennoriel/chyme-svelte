@@ -8,9 +8,10 @@
 	export let value = '';
 	export let variant: 'square' | 'rounded' = 'rounded';
 	export let align: 'left' | 'center' = 'left';
+	export let disabled: boolean | undefined = undefined;
 </script>
 
 <Label {variant} {align}>
 	{label}
-	<input type="text" {name} {required} bind:value {placeholder} />
+	<input type="text" {name} {required} bind:value {placeholder} {disabled} />
 </Label>

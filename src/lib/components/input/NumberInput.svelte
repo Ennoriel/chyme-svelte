@@ -10,9 +10,10 @@
 	export let align: 'left' | 'center' = 'left';
 	export let min: string | number | undefined = undefined;
 	export let max: string | number | undefined = undefined;
+	export let step: string | number | undefined = undefined;
 </script>
 
 <Label {variant} {align}>
 	{label}
-	<input type="number" {name} {required} {min} {max} bind:value {placeholder} />
+	<input type="number" {name} {required} {min} {max} {step} bind:value {placeholder} />
 </Label>
