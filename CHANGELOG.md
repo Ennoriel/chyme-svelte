@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.6
+
+### Patch Changes
+
+- Add edit icon
+
 ## 1.5.5
 
 ### Patch Changes
