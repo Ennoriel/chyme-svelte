@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.8
+
+### Patch Changes
+
+- revert removing svelte-select from dependencies to devDep
+
 ## 1.5.7
 
 ### Patch Changes
