@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
+	import type { ComponentType } from 'svelte';
 	import Spinner from './Spinner.svelte';
 
 	export let as: 'a' | 'button' = 'button';
@@ -9,12 +9,13 @@
 	export let type = 'button';
 	export let disabled = false;
 	export let pending = false;
-	export let icon: typeof SvelteComponent | undefined = undefined;
+	export let icon: ComponentType | undefined = undefined;
 	export let iconRight = false;
 
 	$: _theme = ['primary', 'vibrant', 'transparent'].includes(theme) ? theme : 'custom';
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <svelte:element
 	this={as}
 	{type}
@@ -144,7 +145,9 @@
 		color: var(--color, var(--text-color));
 		background-color: var(--bg, var(--primary-color));
 		border: var(--border, none);
-		transition: color 0.2s, background-color 0.2s;
+		transition:
+			color 0.2s,
+			background-color 0.2s;
 		vertical-align: middle;
 		margin-bottom: 3px;
 		text-decoration: none;

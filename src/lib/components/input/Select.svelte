@@ -3,21 +3,21 @@
 	import Label from './Label.svelte';
 	import { createEventDispatcher } from 'svelte';
 
-	type Label = $$Generic;
-	type Value = $$Generic;
-	type Option = { label: Label | string; value: Value | string; created?: boolean };
+	type TLabel = $$Generic;
+	type TValue = $$Generic;
+	type Option = { label: TLabel | string; value: TValue | string; created?: boolean };
 
 	export let align: 'left' | 'center' = 'left';
 	export let filterText = '';
 	export let getLabel: (item: Option) => string = (item) =>
 		typeof item.label === 'string' ? item.label : '';
 	export let items: Array<Option> | undefined = undefined;
-	export let justValue: Value | undefined = undefined;
+	export let justValue: TValue | undefined = undefined;
 	export let label = '';
 	export let listOpen = false;
 	export let listPlacement: 'top' | 'bottom' = 'bottom';
 	export let loadOptions: ((filterText: string) => Promise<Array<Option>>) | undefined = undefined;
-	export let name: string;
+	export let name: string | undefined = undefined;
 	export let placeholder = '';
 	export let required = false;
 	export let searchable = true;
@@ -37,8 +37,8 @@
 		}
 	}
 
-	function handleChange(e: any) {
-		dispatch('change', e.details);
+	function handleChange(e: CustomEvent<Option | undefined>) {
+		dispatch('change', e.detail);
 		if (items) {
 			items = items.map((i) => {
 				delete i.created;

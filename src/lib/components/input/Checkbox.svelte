@@ -61,7 +61,10 @@
 		margin: 0 5px 5px 0;
 		font-size: 14px;
 		cursor: pointer;
-		transition: color 0.2s, background-color 0.2s, filter 0.2s;
+		transition:
+			color 0.2s,
+			background-color 0.2s,
+			filter 0.2s;
 		outline: none;
 		user-select: none;
 	}

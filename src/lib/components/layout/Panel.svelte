@@ -42,7 +42,9 @@
 		position: fixed;
 		top: var(--header-height, 0);
 		width: 300px;
-		transition: all 0.4s, top 0;
+		transition:
+			all 0.4s,
+			top 0;
 		overflow-y: auto;
 		overflow-x: hidden;
 		bottom: 0;

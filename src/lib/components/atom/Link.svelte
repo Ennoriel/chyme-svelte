@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
+	import type { ComponentType } from 'svelte';
 
 	export let target: string | undefined = undefined;
 	export let href: string;
-	export let svg: typeof SvelteComponent | undefined = undefined;
+	export let svg: ComponentType | undefined = undefined;
 	export let inline = false;
 </script>
 

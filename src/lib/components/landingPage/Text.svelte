@@ -2,12 +2,12 @@
 	import { Button } from '../atom';
 	import { ButtonGroup } from '../layout';
 	import Wrapper from './Wrapper.svelte';
-	import type { SvelteComponent } from 'svelte';
+	import type { ComponentType } from 'svelte';
 
 	export let title: string;
 	export let header: 'h1' | 'h2' | 'h3' = 'h2';
 	export let buttons: Array<{ label: string }> | undefined = undefined;
-	export let img: typeof SvelteComponent | undefined = undefined;
+	export let img: ComponentType | undefined = undefined;
 	export let src: string | undefined = undefined;
 	export let theme: 'primary' | 'transparent' = 'primary';
 	export let reverse = false;

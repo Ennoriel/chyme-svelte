@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
+	import type { ComponentType } from 'svelte';
 
 	export let data: Array<{
-		compo?: typeof SvelteComponent | undefined;
+		compo?: ComponentType | undefined;
 		src?: string;
 		number: string;
 		description: string;

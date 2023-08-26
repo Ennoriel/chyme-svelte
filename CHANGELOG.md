@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.7
+
+### Patch Changes
+
+- bump libraries + ts fixes
+
 ## 1.5.6
 
 ### Patch Changes
