@@ -38,7 +38,7 @@ jobs:
       - name: 🔨 install dependencies
         run: pnpm install --frozen-lockfile
       - name: 🔨 build library
-        run: pnpm build
+        run: pnpm package
       - name: 🔨 publish library
         run: pnpm publish
         env:

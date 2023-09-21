@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.9
+
+### Patch Changes
+
+- bump dependencies + align to default SK package config
+
 ## 1.5.8
 
 ### Patch Changes
