@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 1.5.10
+
+### Patch Changes
+
+- bump deps + support for svelte 4
+
 ## 1.5.9
 
 ### Patch Changes
