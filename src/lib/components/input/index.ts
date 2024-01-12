@@ -2,7 +2,6 @@ export { default as Checkbox } from './Checkbox.svelte';
 export { default as EmailInput } from './EmailInput.svelte';
 export { default as FileForm } from './FileForm.svelte';
 export { default as FileInput } from './FileInput.svelte';
-export { default as InputHidden } from './InputHidden.svelte';
 export { default as Label } from './Label.svelte';
 export { default as NumberInput } from './NumberInput.svelte';
 export { default as PasswordInput } from './PasswordInput.svelte';
