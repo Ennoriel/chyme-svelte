@@ -1,5 +1,12 @@
 # chyme-svelte
 
+## 2.0.0
+
+### Major Changes
+
+- remove InputHidden
+- update to SvelteKit v2
+
 ## 1.5.10
 
 ### Patch Changes
