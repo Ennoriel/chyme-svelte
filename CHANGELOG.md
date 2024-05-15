@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 2.0.2
+
+### Patch Changes
+
+- bump libraries
+
 ## 2.0.1
 
 ### Patch Changes
