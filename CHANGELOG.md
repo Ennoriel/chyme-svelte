@@ -1,5 +1,11 @@
 # chyme-svelte
 
+## 2.0.1
+
+### Patch Changes
+
+- remove useless files in library
+
 ## 2.0.0
 
 ### Major Changes
